@@ -170,7 +170,7 @@ abstract class T {
   /// No description provided for @resetSettingsDialogTitle.
   ///
   /// In en, this message translates to:
-  /// **'Reset Theme Settings'**
+  /// **'Reset Application Settings'**
   String get resetSettingsDialogTitle;
 
   /// Current persisted db

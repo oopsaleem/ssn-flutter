@@ -67,11 +67,11 @@ class TAr extends T {
   }
 
   @override
-  String get resetSettingsDialogTitle => 'اعادة ضبط إعدادات السمات';
+  String get resetSettingsDialogTitle => 'اعادة ضبط إعدادات التطبيق';
 
   @override
   String resetSettingsDialogContent(String usedDb) {
-    return 'هل ترغب باعادة ضبط إعدادات السمات الى الإعدادت الافتراضية؟ قاعدة البيانات $usedDb';
+    return 'هل ترغب باعادة ضبط إعدادات التطبيق الى الإعدادت الافتراضية؟ قاعدة البيانات $usedDb';
   }
 
   @override

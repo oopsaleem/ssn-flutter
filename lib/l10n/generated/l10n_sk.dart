@@ -67,7 +67,7 @@ class TSk extends T {
   }
 
   @override
-  String get resetSettingsDialogTitle => 'Reset Theme Settings';
+  String get resetSettingsDialogTitle => 'Reset Application Settings';
 
   @override
   String resetSettingsDialogContent(String usedDb) {

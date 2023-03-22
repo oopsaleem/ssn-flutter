@@ -21,8 +21,8 @@
       "modeSubtitle": {}
     }
   },
-  "resetSettingsDialogTitle": "اعادة ضبط إعدادات السمات",
-  "resetSettingsDialogContent": "هل ترغب باعادة ضبط إعدادات السمات الى الإعدادت الافتراضية؟ قاعدة البيانات {usedDb}",
+  "resetSettingsDialogTitle": "اعادة ضبط إعدادات التطبيق",
+  "resetSettingsDialogContent": "هل ترغب باعادة ضبط إعدادات التطبيق الى الإعدادت الافتراضية؟ قاعدة البيانات {usedDb}",
   "@resetSettingsDialogContent": {
     "description": "Current persisted db",
     "placeholders": {

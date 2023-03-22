@@ -21,7 +21,7 @@
       "modeSubtitle": {}
     }
   },
-  "resetSettingsDialogTitle": "Reset Theme Settings",
+  "resetSettingsDialogTitle": "Reset Application Settings",
   "resetSettingsDialogContent": "Reset all {usedDb} theme settings back to their default values?",
   "@resetSettingsDialogContent": {
     "description": "Current persisted db",
