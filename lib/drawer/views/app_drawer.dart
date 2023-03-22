@@ -70,38 +70,24 @@ class AppDrawer extends ConsumerWidget {
                     context, ThemeShowcasePage.route);
               },
             ),
-            ListTile(
-              title: Text(T.of(context).hoursPageTitle),
-              trailing: const Icon(AppIcons.menuItemOpen),
-              onTap: () async {
-                Navigator.pop(context);
-                await Navigator.pushNamed(context, SplashPage.route);
-              },
-            ),
-            // The logout option is only shown if we are logged in.
-            const Divider(),
-            _Header(T.of(context).themeModeTitle),
-            const UseMaterial3Switch(),
-            UseSubThemesListTile(
-              title: Text(T.of(context).componentThemes),
-            ),
-            ThemeModeListTile(
-                title: Text(T.of(context).themeModeTitle)),
 
-            ListTile(
-              title: Text(T.of(context).resetSettings),
-              onTap: () async {
-                final bool? reset = await showDialog<bool?>(
-                  context: context,
-                  builder: (BuildContext context) {
-                    return const ResetSettingsDialog();
-                  },
-                );
-                if (reset ?? false) {
-                  Settings.reset(ref);
-                }
-              },
-            ),
+            // The logout option is only shown if we are logged in.
+            // ListTile(
+            //   title: Text(T.of(context).hoursPageTitle),
+            //   trailing: const Icon(AppIcons.menuItemOpen),
+            //   onTap: () async {
+            //     Navigator.pop(context);
+            //     await Navigator.pushNamed(context, SplashPage.route);
+            //   },
+            // ),
+            const Divider(),
+            // _Header(T.of(context).themeModeTitle),
+            // const UseMaterial3Switch(),
+            // UseSubThemesListTile(
+            //   title: Text(T.of(context).componentThemes),
+            // ),
+            ThemeModeListTile(title: Text(T.of(context).themeModeTitle)),
+
             const Divider(),
             // _Header(T.of(context).language),
 
@@ -113,7 +99,7 @@ class AppDrawer extends ConsumerWidget {
                 showBottomSheet<void>(
                   context: context,
                   builder: (BuildContext context) =>
-                  const BottomSheetSettings(),
+                      const BottomSheetSettings(),
                 );
               },
             ),

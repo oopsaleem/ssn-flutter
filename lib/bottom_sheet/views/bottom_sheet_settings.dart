@@ -5,6 +5,8 @@ import '../../core/constants/app_insets.dart';
 import '../../core/views/widgets/universal/animated_hide.dart';
 import '../../home/views/widgets/language_picker_widget.dart';
 import '../../l10n/generated/l10n.dart';
+import '../../settings/controllers/settings.dart';
+import '../../settings/views/dialogs/reset_settings_dialog.dart';
 import '../../settings/views/widgets/app_bar_elevation_slider.dart';
 import '../../settings/views/widgets/dark_app_bar_style_popup_menu.dart';
 import '../../settings/views/widgets/dark_colors_swap_switch.dart';
@@ -94,6 +96,22 @@ class BottomSheetSettings extends ConsumerWidget {
                         T.of(context).appBarStylePopupMenuDefaultLabel,
                   ),
                 const AppBarElevationSlider(),
+                ListTile(
+                  title: Text(T.of(context).resetSettings),
+                  leading: const Icon(Icons.restore),
+                  onTap: () async {
+                    final bool? reset = await showDialog<bool?>(
+                      context: context,
+                      builder: (BuildContext context) {
+                        return const ResetSettingsDialog();
+                      },
+                    );
+                    if (reset ?? false) {
+                      Settings.reset(ref);
+                    }
+                  },
+                ),
+
               ],
             ),
           ),
