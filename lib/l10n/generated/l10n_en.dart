@@ -84,7 +84,7 @@ class TEn extends T {
   String get themeModeTitle => 'Theme';
 
   @override
-  String get moreSettingPageTitle => 'More Settings';
+  String get appSettingPageTitle => 'Application Settings';
 
   @override
   String get useMaterial3 => 'Use Material 3';

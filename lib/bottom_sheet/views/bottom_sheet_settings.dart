@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../core/constants/app_insets.dart';
 import '../../core/views/widgets/universal/animated_hide.dart';
+import '../../home/views/widgets/language_picker_widget.dart';
 import '../../l10n/generated/l10n.dart';
 import '../../settings/views/widgets/app_bar_elevation_slider.dart';
 import '../../settings/views/widgets/dark_app_bar_style_popup_menu.dart';
@@ -47,8 +48,9 @@ class BottomSheetSettings extends ConsumerWidget {
               controller: ScrollController(),
               primary: false,
               children: <Widget>[
-                ListTile(title: Text(T.of(context).moreSettingPageTitle)),
+                ListTile(title: Text(T.of(context).appSettingPageTitle)),
                 const Divider(),
+                const LanguagePickerWidget(),
                 const ThemePopupMenu(),
                 const UseMaterial3Switch(),
                 UseSubThemesListTile(

@@ -71,18 +71,6 @@ class AppDrawer extends ConsumerWidget {
               },
             ),
             ListTile(
-              title: Text(T.of(context).settingsPageTitle),
-              trailing: const Icon(AppIcons.menuItemOpen),
-              onTap: () {
-                Navigator.pop(context);
-                showBottomSheet<void>(
-                  context: context,
-                  builder: (BuildContext context) =>
-                      const BottomSheetSettings(),
-                );
-              },
-            ),
-            ListTile(
               title: Text(T.of(context).hoursPageTitle),
               trailing: const Icon(AppIcons.menuItemOpen),
               onTap: () async {
@@ -117,8 +105,18 @@ class AppDrawer extends ConsumerWidget {
             const Divider(),
             // _Header(T.of(context).language),
 
-            const LanguagePickerWidget(),
-
+            ListTile(
+              title: Text(T.of(context).settingsPageTitle),
+              trailing: const Icon(AppIcons.menuItemOpen),
+              onTap: () {
+                Navigator.pop(context);
+                showBottomSheet<void>(
+                  context: context,
+                  builder: (BuildContext context) =>
+                  const BottomSheetSettings(),
+                );
+              },
+            ),
             ListTile(
               title: Text(T.of(context).about),
               // trailing: const Icon(AppIcons.menuItemOpen),

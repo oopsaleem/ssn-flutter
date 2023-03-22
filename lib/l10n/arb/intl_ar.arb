@@ -3,7 +3,7 @@
   "greeting": "مرحبا {username}!",
   "localeLanguageWritten": "{languageWritten, select, arabic{العربية} english{الانجليزية} dutch{الهولندية} polish{البولندية} russian{الروسية} ukrainian{الاوكرانية} bulgaria{البلغارية} czech{التشيكية} slovak{السلوڤاكية} other{اخرى}}",
   "@localeLanguageWritten": {
-    "description": "اللغة مكتوبة بلغى النظام",
+    "description": "اللغة مكتوبة بلغى التطبيق",
     "placeholders": {
       "languageWritten": {}
     }
@@ -34,20 +34,20 @@
   "resetSettingsDialogConfirm": "تأكيد",
   "resetSettingsDialogCancel": "إلغاء",
   "themeModeTitle": "السمات",
-  "moreSettingPageTitle": "اعدادات اخرى",
+  "appSettingPageTitle": "اعدادات التطبيق",
   "useMaterial3": "ادوات الاصدار ٣",
   "componentThemes": "ادوات السمات",
   "componentThemesDetail": "تمكين السمات الفرعية FlexColorScheme.",
   "swapColorTitle": "تبديل بين الالوان",
   "swapColorDetail": "تبديل بين الالوان الرئيسية و الثانوية.",
-  "appBarStyleTitle": "شريط النظام",
-  "appBarStylePopupMenuTitle": "نمط شريط النظام",
+  "appBarStyleTitle": "شريط التطبيق",
+  "appBarStylePopupMenuTitle": "نمط شريط التطبيق",
   "appBarStylePopupMenuDefaultLabel": "إفتراضي",
   "trueBlackSwitchTitle": "تمكين اللون الأسود الحقيقي",
-  "computeDarkSchemaColorsSwitchTitle": "تمكين احتساب ألوان النظام الداكنة",
-  "computeDarkSchemaColorsSwitchSubtitle": "يتم حساب ألوان النظام الداكنة من مخطط الإضاءة ، بدلاً من استخدام ألوان مخطط داكنة محددة.",
+  "computeDarkSchemaColorsSwitchTitle": "تمكين احتساب ألوان التطبيق الداكنة",
+  "computeDarkSchemaColorsSwitchSubtitle": "يتم حساب ألوان التطبيق الداكنة من مخطط الإضاءة ، بدلاً من استخدام ألوان مخطط داكنة محددة.",
   "levelLabel": "المستوى",
-  "settingsAppBarElevationSliderTitle": "ارتفاع شريط النظام",
+  "settingsAppBarElevationSliderTitle": "ارتفاع شريط التطبيق",
   "elevationLabel": "ارتفاع",
   "colorSchemeName": "{schemeName, select, Juanandpink{خوان والوردي} OhMandyred{يا ماندي الحمراء} Mossandmustard{الطحلب والخردل} OregonandEden{أوريغون وإيدن} Pinkandlaser{الوردي والليزر} Materialdefault{الافتراضي المادي} Materialhighcontrast{التباين المادي العالي} Bluedelight{فرحة زرقاء} Indigonights{ليالي النيلي} Hippieblue{الهبي الأزرق} Aquablue{أزرق مائي} Brandblues{بلوز العلامة التجارية} Deepbluesea{بحر الأزرق العميق} Pinksakura{الوردي ساكورا} OhMandyred{يا ماندي الحمراء} Redtornado{إعصار أحمر} Redredwine{النبيذ الأحمر الأحمر} Purplebrown{بني بنفسجي} Greenforest{غابة خضراء} Greenmoney{المال الأخضر} Greenjungle{الغابة الخضراء} Greylaw{القانون الرمادي} Willowandwasabi{الصفصاف والوسابي} Goldsunset{غروب الشمس الذهب} Mangomojito{مانجو موهيتو} Amberblue{العنبر الأزرق} Vesuviusburned{احترق فيزوف} Deeppurple{ديب بيربل} Ebonyclay{طين خشب الأبنوس} Barossa{باروسا} Sharkandorange{سمك القرش والبرتقال} Bigstonetulip{حجر الخزامى الكبير} Damaskandlunar{دمشقي وقمري} Bahamaandtrinidad{باهاما وترينيداد} Mallardandvalencia{مالارد وفالنسيا} Espressoandcrema{اسبريسو وكريمة} Outerspacestage{مرحلة الفضاء الخارجي} Bluewhale{الحوت الأزرق} SanJuanblue{سان خوان الأزرق} Rosewood{روزوود} Blumine{بلومين} FlutterDash{اندفاعة رفرفة} M3baseline{خط الأساس M3} Verdungreen{فردان الخضراء} Dellgenoagreen{ديل جنوى جرين} other{آخر} }",
   "@colorSchemeName": {
@@ -63,5 +63,5 @@
       "schemeDesc": {}
     }
   },
-  "about": "عن النظام"
+  "about": "عن التطبيق"
 }

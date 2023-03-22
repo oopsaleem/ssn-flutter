@@ -84,7 +84,7 @@ class TAr extends T {
   String get themeModeTitle => 'السمات';
 
   @override
-  String get moreSettingPageTitle => 'اعدادات اخرى';
+  String get appSettingPageTitle => 'اعدادات التطبيق';
 
   @override
   String get useMaterial3 => 'ادوات الاصدار ٣';
@@ -102,10 +102,10 @@ class TAr extends T {
   String get swapColorDetail => 'تبديل بين الالوان الرئيسية و الثانوية.';
 
   @override
-  String get appBarStyleTitle => 'شريط النظام';
+  String get appBarStyleTitle => 'شريط التطبيق';
 
   @override
-  String get appBarStylePopupMenuTitle => 'نمط شريط النظام';
+  String get appBarStylePopupMenuTitle => 'نمط شريط التطبيق';
 
   @override
   String get appBarStylePopupMenuDefaultLabel => 'إفتراضي';
@@ -114,13 +114,13 @@ class TAr extends T {
   String get trueBlackSwitchTitle => 'تمكين اللون الأسود الحقيقي';
 
   @override
-  String get computeDarkSchemaColorsSwitchTitle => 'تمكين احتساب ألوان النظام الداكنة';
+  String get computeDarkSchemaColorsSwitchTitle => 'تمكين احتساب ألوان التطبيق الداكنة';
 
   @override
-  String get computeDarkSchemaColorsSwitchSubtitle => 'يتم حساب ألوان النظام الداكنة من مخطط الإضاءة ، بدلاً من استخدام ألوان مخطط داكنة محددة.';
+  String get computeDarkSchemaColorsSwitchSubtitle => 'يتم حساب ألوان التطبيق الداكنة من مخطط الإضاءة ، بدلاً من استخدام ألوان مخطط داكنة محددة.';
 
   @override
-  String get settingsAppBarElevationSliderTitle => 'ارتفاع شريط النظام';
+  String get settingsAppBarElevationSliderTitle => 'ارتفاع شريط التطبيق';
 
   @override
   String get levelLabel => 'المستوى';
@@ -241,5 +241,5 @@ class TAr extends T {
   }
 
   @override
-  String get about => 'عن النظام';
+  String get about => 'عن التطبيق';
 }

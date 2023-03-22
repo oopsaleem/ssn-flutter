@@ -197,11 +197,11 @@ abstract class T {
   /// **'Theme'**
   String get themeModeTitle;
 
-  /// No description provided for @moreSettingPageTitle.
+  /// No description provided for @appSettingPageTitle.
   ///
   /// In en, this message translates to:
-  /// **'More Settings'**
-  String get moreSettingPageTitle;
+  /// **'Application Settings'**
+  String get appSettingPageTitle;
 
   /// No description provided for @useMaterial3.
   ///

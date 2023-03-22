@@ -34,7 +34,7 @@
   "resetSettingsDialogConfirm": "Reset",
   "resetSettingsDialogCancel": "Cancel",
   "themeModeTitle": "Theme",
-  "moreSettingPageTitle": "More Settings",
+  "appSettingPageTitle": "Application Settings",
   "useMaterial3": "Use Material 3",
   "componentThemes": "Component themes",
   "componentThemesDetail": "Enable FlexColorScheme opinionated sub themes",
