@@ -8,14 +8,8 @@ import '../../core/constants/app_icons.dart';
 import '../../core/constants/app_insets.dart';
 import '../../core/utils/app_scroll_behavior.dart';
 import '../../home/views/pages/home_page.dart';
-import '../../home/views/widgets/language_picker_widget.dart';
 import '../../l10n/generated/l10n.dart';
-import '../../settings/controllers/settings.dart';
-import '../../settings/views/dialogs/reset_settings_dialog.dart';
 import '../../settings/views/widgets/theme_mode_list_tile.dart';
-import '../../settings/views/widgets/use_material3_switch.dart';
-import '../../settings/views/widgets/use_sub_themes_list_tile.dart';
-import '../../splash/views/splash_page.dart';
 import '../../theme_showcase/views/pages/theme_showcase_page.dart';
 
 /// An AppDrawer widget used on two pages in this demo application.
