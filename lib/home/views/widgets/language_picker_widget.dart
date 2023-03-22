@@ -65,15 +65,14 @@ Widget _customPopupItemBuilderLanguages(
             color: Theme.of(context).secondaryHeaderColor,
           ),
     child: ListTile(
-        selected: isSelected,
-        title: Text(model.locName),
-        subtitle: Text(T.of(context).localeLanguageWritten(model.enName)),
-        // Text(model.enName),
-        leading: CircleAvatar(
-          child: Text(
-            AppConst.kIsWeb ? model.code : model.flag,
-            style: const TextStyle(fontSize: 28),
-          ),
-        )),
+      selected: isSelected,
+      title: Text(model.locName),
+      subtitle: Text(T.of(context).localeLanguageWritten(model.enName)),
+      // Text(model.enName),
+      leading: Text(
+        AppConst.kIsWeb ? model.code : model.flag,
+        style: const TextStyle(fontSize: 28),
+      ),
+    ),
   );
 }
