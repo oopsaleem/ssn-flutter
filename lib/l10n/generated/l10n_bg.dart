@@ -1,6 +1,8 @@
+// ignore: unused_import
 import 'package:intl/intl.dart' as intl;
-
 import 'l10n.dart';
+
+// ignore_for_file: type=lint
 
 /// The translations for Bulgarian (`bg`).
 class TBg extends T {
@@ -93,7 +95,8 @@ class TBg extends T {
   String get componentThemes => 'Component themes';
 
   @override
-  String get componentThemesDetail => 'Enable FlexColorScheme opinionated sub themes';
+  String get componentThemesDetail =>
+      'Enable FlexColorScheme opinionated sub themes';
 
   @override
   String get swapColorTitle => 'Swap colors';
@@ -117,7 +120,8 @@ class TBg extends T {
   String get computeDarkSchemaColorsSwitchTitle => 'Compute dark scheme colors';
 
   @override
-  String get computeDarkSchemaColorsSwitchSubtitle => 'Dark scheme colors are computed from the light scheme, instead of using defined dark scheme colors.';
+  String get computeDarkSchemaColorsSwitchSubtitle =>
+      'Dark scheme colors are computed from the light scheme, instead of using defined dark scheme colors.';
 
   @override
   String get settingsAppBarElevationSliderTitle => 'AppBar elevation';
@@ -194,30 +198,42 @@ class TBg extends T {
         'Mossandmustard': 'Moss green and mustard yellow.',
         'OregonandEden': 'Oregon orange and eden green.',
         'Pinkandlaser': 'Tapestry pink and laser yellow',
-        'Materialdefault': 'Default Material 2 color theme, used in the design guide',
+        'Materialdefault':
+            'Default Material 2 color theme, used in the design guide',
         'Materialhighcontrast': 'High contrast Material 2 design guide theme',
-        'Bluedelight': 'Blue color theme, based on Material blue and light blue colors',
-        'Indigonights': 'Indigo color theme, based on Material indigo and deep purple colors',
-        'Hippieblue': 'Hippie blue with surfie green and chock coral pink theme',
+        'Bluedelight':
+            'Blue color theme, based on Material blue and light blue colors',
+        'Indigonights':
+            'Indigo color theme, based on Material indigo and deep purple colors',
+        'Hippieblue':
+            'Hippie blue with surfie green and chock coral pink theme',
         'Aquablue': 'Aqua tropical ocean blue theme',
         'Brandblues': 'Blue colors used in well known brand themes',
         'Deepbluesea': 'Dark deep blue sea color theme',
-        'Pinksakura': 'Pink color theme, based on sakura cherry blossom like colors',
+        'Pinksakura':
+            'Pink color theme, based on sakura cherry blossom like colors',
         'OhMandyred': 'Mandy red and Viking blue inspired red theme',
         'Redtornado': 'Red color theme, based on Material red and pink colors',
         'Redredwine': 'Red color theme, based on red wine like colors',
-        'Purplebrown': 'Purple brown tinted aubergine and eggplant colored theme',
-        'Greenforest': 'Green color theme, based on Material green and cyan colors',
+        'Purplebrown':
+            'Purple brown tinted aubergine and eggplant colored theme',
+        'Greenforest':
+            'Green color theme, based on Material green and cyan colors',
         'Greenmoney': 'Green money and finance style color theme',
         'Greenjungle': 'Green jungle and rain forest color theme',
-        'Greylaw': 'Material blue grey and ultra dark purple color theme, law firm style',
-        'Willowandwasabi': 'Wild Willow and wasabi green with orchid purple inspired colors',
+        'Greylaw':
+            'Material blue grey and ultra dark purple color theme, law firm style',
+        'Willowandwasabi':
+            'Wild Willow and wasabi green with orchid purple inspired colors',
         'Goldsunset': 'Gold sunset color theme, based on orange like colors',
         'Mangomojito': 'Orange and green Mango mojito color theme',
-        'Amberblue': 'Amber blaze and blue color theme, based on Material amber and blue accent colors',
+        'Amberblue':
+            'Amber blaze and blue color theme, based on Material amber and blue accent colors',
         'Vesuviusburned': 'Vesuvius burned orange and eden green theme',
-        'Deeppurple': 'Deep purple daisy bush theme, based on Material deepPurple and lightBlueAccent colors',
-        'Ebonyclay': 'Ebony clay dark blue-grey and watercourse green colored theme',
+        'Deeppurple':
+            'Deep purple daisy bush theme, based on Material deepPurple and lightBlueAccent colors',
+        'Ebonyclay':
+            'Ebony clay dark blue-grey and watercourse green colored theme',
         'Barossa': 'Barossa red and cardin green colored theme',
         'Sharkandorange': 'Shark grey and orange ecstasy colored theme',
         'Bigstonetulip': 'Big stone blue and tulip tree yellow colored theme',
@@ -226,14 +242,16 @@ class TBg extends T {
         'Mallardandvalencia': 'Mallard green and Valencia pink colored theme',
         'Espressoandcrema': 'Espresso dark brown and crema colored theme',
         'Outerspacestage': 'Outer space dark blue-grey and stage red theme',
-        'Bluewhale': 'Blue whale, jungle green and outrageous tango orange theme',
+        'Bluewhale':
+            'Blue whale, jungle green and outrageous tango orange theme',
         'SanJuanblue': 'San Juan blue and pink salmon theme',
         'Rosewood': 'Rosewood red, with horses neck and driftwood theme',
         'Blumine': 'Blumine, easter blue and saffron mango theme',
         'FlutterDash': 'Flutter Dash wallpaper based theme',
         'M3baseline': 'Material guide 3 baseline based theme',
         'Verdungreen': 'Material guide 3 verdun and mineral green with hemlock',
-        'Dellgenoagreen': 'Material guide 3 theme with dell, axolotl and genoa greens',
+        'Dellgenoagreen':
+            'Material guide 3 theme with dell, axolotl and genoa greens',
         'other': 'other',
       },
     );

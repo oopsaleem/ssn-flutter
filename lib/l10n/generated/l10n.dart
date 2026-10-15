@@ -15,6 +15,8 @@ import 'l10n_ru.dart';
 import 'l10n_sk.dart';
 import 'l10n_uk.dart';
 
+// ignore_for_file: type=lint
+
 /// Callers can lookup localized strings with an instance of T
 /// returned by `T.of(context)`.
 ///
@@ -67,7 +69,8 @@ import 'l10n_uk.dart';
 /// be consistent with the languages listed in the T.supportedLocales
 /// property.
 abstract class T {
-  T(String locale) : localeName = intl.Intl.canonicalizedLocale(locale.toString());
+  T(String locale)
+      : localeName = intl.Intl.canonicalizedLocale(locale.toString());
 
   final String localeName;
 
@@ -87,7 +90,8 @@ abstract class T {
   /// Additional delegates can be added by appending to this list in
   /// MaterialApp. This list does not have to be used at all if a custom list
   /// of delegates is preferred or required.
-  static const List<LocalizationsDelegate<dynamic>> localizationsDelegates = <LocalizationsDelegate<dynamic>>[
+  static const List<LocalizationsDelegate<dynamic>> localizationsDelegates =
+      <LocalizationsDelegate<dynamic>>[
     delegate,
     GlobalMaterialLocalizations.delegate,
     GlobalCupertinoLocalizations.delegate,
@@ -315,32 +319,48 @@ class _TDelegate extends LocalizationsDelegate<T> {
   }
 
   @override
-  bool isSupported(Locale locale) => <String>['ar', 'bg', 'cs', 'en', 'nl', 'pl', 'ru', 'sk', 'uk'].contains(locale.languageCode);
+  bool isSupported(Locale locale) => <String>[
+        'ar',
+        'bg',
+        'cs',
+        'en',
+        'nl',
+        'pl',
+        'ru',
+        'sk',
+        'uk'
+      ].contains(locale.languageCode);
 
   @override
   bool shouldReload(_TDelegate old) => false;
 }
 
 T lookupT(Locale locale) {
-
-
   // Lookup logic when only language code is specified.
   switch (locale.languageCode) {
-    case 'ar': return TAr();
-    case 'bg': return TBg();
-    case 'cs': return TCs();
-    case 'en': return TEn();
-    case 'nl': return TNl();
-    case 'pl': return TPl();
-    case 'ru': return TRu();
-    case 'sk': return TSk();
-    case 'uk': return TUk();
+    case 'ar':
+      return TAr();
+    case 'bg':
+      return TBg();
+    case 'cs':
+      return TCs();
+    case 'en':
+      return TEn();
+    case 'nl':
+      return TNl();
+    case 'pl':
+      return TPl();
+    case 'ru':
+      return TRu();
+    case 'sk':
+      return TSk();
+    case 'uk':
+      return TUk();
   }
 
   throw FlutterError(
-    'T.delegate failed to load unsupported locale "$locale". This is likely '
-    'an issue with the localizations generation tool. Please file an issue '
-    'on GitHub with a reproducible sample app and the gen-l10n configuration '
-    'that was used.'
-  );
+      'T.delegate failed to load unsupported locale "$locale". This is likely '
+      'an issue with the localizations generation tool. Please file an issue '
+      'on GitHub with a reproducible sample app and the gen-l10n configuration '
+      'that was used.');
 }

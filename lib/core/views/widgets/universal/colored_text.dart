@@ -276,7 +276,7 @@ class ColoredText extends StatelessWidget {
         color: color ?? Theme.of(context).colorScheme.primary,
       ),
     );
-    if (MediaQuery.boldTextOverride(context)) {
+    if (MediaQuery.boldTextOf(context)) {
       effectiveTextStyle = effectiveTextStyle
           .merge(const TextStyle(fontWeight: FontWeight.bold));
     }
@@ -323,7 +323,7 @@ class ColoredText extends StatelessWidget {
     properties.add(ColorProperty('color', color, defaultValue: null));
     properties.add(DoubleProperty('fontSize', fontSize, defaultValue: null));
     properties.add(
-        EnumProperty<FontWeight>('fontWeight', fontWeight, defaultValue: null));
+        DiagnosticsProperty<FontWeight>('fontWeight', fontWeight, defaultValue: null));
     style?.debugFillProperties(properties);
     properties.add(
         EnumProperty<TextAlign>('textAlign', textAlign, defaultValue: null));

@@ -90,7 +90,7 @@ class AppDrawer extends ConsumerWidget {
               trailing: const Icon(AppIcons.menuItemOpen),
               onTap: () {
                 Navigator.pop(context);
-                showBottomSheet<void>(
+                showBottomSheet(
                   context: context,
                   builder: (BuildContext context) =>
                       const BottomSheetSettings(),
