@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:material_ui/material_ui.dart';
 
 import '../../../core/views/widgets/universal/switch_list_tile_adaptive.dart';
 import '../../controllers/settings.dart';
@@ -8,8 +8,11 @@ class LightColorsSwapSwitch extends ConsumerWidget {
   final String title;
   final String subtitle;
 
-  const LightColorsSwapSwitch(
-      {super.key, required this.title, required this.subtitle});
+  const LightColorsSwapSwitch({
+    super.key,
+    required this.title,
+    required this.subtitle,
+  });
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {

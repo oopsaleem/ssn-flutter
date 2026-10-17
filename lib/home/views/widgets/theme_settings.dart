@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:material_ui/material_ui.dart';
 
 import '../../../core/views/widgets/universal/animated_hide.dart';
 import '../../../l10n/generated/l10n.dart';
@@ -50,8 +50,8 @@ class ThemeSettings extends ConsumerWidget {
     final int flexTone = ref.watch(Settings.usedFlexToneProvider);
     final int usedFlexTone =
         flexTone < 0 || flexTone >= FlexTone.values.length || !useSeed
-            ? 0
-            : flexTone;
+        ? 0
+        : flexTone;
 
     final String explainM3Surface = useSeed
         ? '. With seeded ColorScheme, for a pure M3 surface design, use level 0'
@@ -67,8 +67,8 @@ class ThemeSettings extends ConsumerWidget {
         ),
         AnimatedHide(
           hide: !useSubThemes,
-          child: Column(
-            children: const <Widget>[
+          child: const Column(
+            children: <Widget>[
               ListTile(
                 title: Text('Global border radius on components'),
                 subtitle: Text(
@@ -120,8 +120,10 @@ class ThemeSettings extends ConsumerWidget {
                     : null,
               ),
               ListTile(
-                title: Text('${FlexTone.values[usedFlexTone].tone}'
-                    ' FlexTones setup with CAM16 chroma'),
+                title: Text(
+                  '${FlexTone.values[usedFlexTone].tone}'
+                  ' FlexTones setup with CAM16 chroma',
+                ),
                 subtitle: Text(FlexTone.values[usedFlexTone].setup),
               ),
             ],
@@ -147,8 +149,10 @@ class ThemeSettings extends ConsumerWidget {
           const LightSurfaceModeListTile(),
           ListTile(
             title: const Text('Light surface blend'),
-            subtitle: Text('Adjust the surface, background and '
-                'scaffold blends$explainM3Surface'),
+            subtitle: Text(
+              'Adjust the surface, background and '
+              'scaffold blends$explainM3Surface',
+            ),
           ),
           const LightSurfaceBlendLevelSlider(),
         ] else ...<Widget>[
@@ -156,8 +160,10 @@ class ThemeSettings extends ConsumerWidget {
           const DarkSurfaceModeListTile(),
           ListTile(
             title: const Text('Dark surface blend'),
-            subtitle: Text('Adjust the surface, background and '
-                'scaffold blends$explainM3Surface'),
+            subtitle: Text(
+              'Adjust the surface, background and '
+              'scaffold blends$explainM3Surface',
+            ),
           ),
           const DarkSurfaceBlendLevelSlider(),
         ],

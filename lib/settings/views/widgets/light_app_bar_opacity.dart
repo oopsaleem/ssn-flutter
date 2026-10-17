@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:material_ui/material_ui.dart';
 
 import '../../controllers/settings.dart';
 
@@ -15,16 +15,17 @@ class LightAppBarOpacitySlider extends ConsumerWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           Slider.adaptive(
-              min: 0,
-              max: 100,
-              divisions: 100,
-              label: (opacity * 100.0).floor().toString(),
-              value: opacity * 100.0,
-              onChanged: (final double value) {
-                ref
-                    .read(Settings.lightAppBarOpacityProvider.notifier)
-                    .set(value / 100);
-              }),
+            min: 0,
+            max: 100,
+            divisions: 100,
+            label: (opacity * 100.0).floor().toString(),
+            value: opacity * 100.0,
+            onChanged: (final double value) {
+              ref
+                  .read(Settings.lightAppBarOpacityProvider.notifier)
+                  .set(value / 100);
+            },
+          ),
         ],
       ),
       trailing: Padding(
@@ -32,10 +33,7 @@ class LightAppBarOpacitySlider extends ConsumerWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.end,
           children: <Widget>[
-            Text(
-              '%',
-              style: textTheme.bodySmall,
-            ),
+            Text('%', style: textTheme.bodySmall),
             Text(
               (opacity * 100).floor().toString(),
               style: textTheme.bodySmall!.copyWith(fontWeight: FontWeight.bold),

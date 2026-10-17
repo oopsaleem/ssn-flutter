@@ -1,6 +1,6 @@
 import 'package:flex_color_scheme/flex_color_scheme.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:material_ui/material_ui.dart';
 
 // import '../../core/views/widgets/universal/colored_text.dart';
 
@@ -42,10 +42,10 @@ class SplashPage extends StatelessWidget {
           onTap: () {
             Navigator.pop(context);
           },
-          child: Center(
+          child: const Center(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: const <Widget>[
+              children: <Widget>[
                 // ColoredText(
                 //   'Splash!',
                 //   style: theme.textTheme.displayMedium,
@@ -53,8 +53,10 @@ class SplashPage extends StatelessWidget {
                 SizedBox(height: 20),
                 Text('A clean splash screen'),
                 SizedBox(height: 8),
-                Text('No status bar scrim and has inverted status icons',
-                    textAlign: TextAlign.center),
+                Text(
+                  'No status bar scrim and has inverted status icons',
+                  textAlign: TextAlign.center,
+                ),
                 SizedBox(height: 8),
                 // const ColoredText('I am ColoredText, primary by default'),
                 // ColoredText('and colored via direct property.',

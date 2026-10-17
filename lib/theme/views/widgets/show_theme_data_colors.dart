@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 import '../../../core/constants/app_insets.dart';
 import '../../../core/views/widgets/app/color_card.dart';
@@ -18,10 +18,7 @@ import '../../../core/views/widgets/app/color_card.dart';
 /// all the Widgets in this file be dropped into any application. They are
 /// however not so generally reusable.
 class ShowThemeDataColors extends StatelessWidget {
-  const ShowThemeDataColors({
-    super.key,
-    this.onBackgroundColor,
-  });
+  const ShowThemeDataColors({super.key, this.onBackgroundColor});
 
   /// The color of the background the color widget are being drawn on.
   ///
@@ -43,8 +40,8 @@ class ShowThemeDataColors extends StatelessWidget {
   // On color used when a theme color property does not have a theme onColor.
   static Color _onColor(final Color color, final Color background) =>
       _isLight(Color.alphaBlend(color, background))
-          ? Colors.black
-          : Colors.white;
+      ? Colors.black
+      : Colors.white;
 
   @override
   Widget build(BuildContext context) {
@@ -54,7 +51,8 @@ class ShowThemeDataColors extends StatelessWidget {
     final bool useMaterial3 = theme.useMaterial3;
 
     final MediaQueryData media = MediaQuery.of(context);
-    final bool isPhone = media.size.width < AppInsets.phoneWidthBreakpoint ||
+    final bool isPhone =
+        media.size.width < AppInsets.phoneWidthBreakpoint ||
         media.size.height < AppInsets.phoneHeightBreakpoint;
     final double spacing = isPhone ? 3 : 6;
 
@@ -63,20 +61,14 @@ class ShowThemeDataColors extends StatelessWidget {
     // If we had one, copy in a border side to it.
     if (border is RoundedRectangleBorder) {
       border = border.copyWith(
-        side: BorderSide(
-          color: theme.dividerColor,
-          width: 1,
-        ),
+        side: BorderSide(color: theme.dividerColor, width: 1),
       );
     } else {
       // If border was null, make one matching Card default, but with border
       // side, if it was not null, we leave it as it was.
       border ??= RoundedRectangleBorder(
         borderRadius: BorderRadius.all(Radius.circular(useMaterial3 ? 12 : 4)),
-        side: BorderSide(
-          color: theme.dividerColor,
-          width: 1,
-        ),
+        side: BorderSide(color: theme.dividerColor, width: 1),
       );
     }
 
@@ -87,47 +79,41 @@ class ShowThemeDataColors extends StatelessWidget {
     // Warning label for scaffold background when it uses to much blend.
     final String scaffoldTooHigh = isDark
         ? _isLight(theme.scaffoldBackgroundColor)
-            ? '\nTOO HIGH'
-            : ''
+              ? '\nTOO HIGH'
+              : ''
         : _isDark(theme.scaffoldBackgroundColor)
-            ? '\nTOO HIGH'
-            : '';
+        ? '\nTOO HIGH'
+        : '';
     // Warning label for scaffold background when it uses to much blend.
     final String surfaceTooHigh = isDark
         ? _isLight(theme.colorScheme.surface)
-            ? '\nTOO HIGH'
-            : ''
+              ? '\nTOO HIGH'
+              : ''
         : _isDark(theme.colorScheme.surface)
-            ? '\nTOO HIGH'
-            : '';
+        ? '\nTOO HIGH'
+        : '';
 
     // Warning label for scaffold background when it uses to much blend.
     final String backTooHigh = isDark
-        ? _isLight(theme.colorScheme.background)
-            ? '\nTOO HIGH'
-            : ''
-        : _isDark(theme.colorScheme.background)
-            ? '\nTOO HIGH'
-            : '';
+        ? _isLight(theme.colorScheme.surface)
+              ? '\nTOO HIGH'
+              : ''
+        : _isDark(theme.colorScheme.surface)
+        ? '\nTOO HIGH'
+        : '';
 
     // Wrap this widget branch in a custom theme where card has a border outline
     // if it did not have one, but retains in ambient themed border radius.
     return Theme(
       data: Theme.of(context).copyWith(
-        cardTheme: CardTheme.of(context).copyWith(
-          elevation: 0,
-          shape: border,
-        ),
+        cardTheme: CardTheme.of(context).copyWith(elevation: 0, shape: border),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           Padding(
             padding: const EdgeInsets.only(top: 8),
-            child: Text(
-              'ThemeData Colors',
-              style: theme.textTheme.titleMedium,
-            ),
+            child: Text('ThemeData Colors', style: theme.textTheme.titleMedium),
           ),
           const SizedBox(height: 8),
           Wrap(

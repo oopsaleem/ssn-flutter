@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:material_ui/material_ui.dart';
 
 import '../../controllers/settings.dart';
 
@@ -14,16 +14,17 @@ class DarkSurfaceBlendLevelSlider extends ConsumerWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           Slider.adaptive(
-              min: 0,
-              max: 40,
-              divisions: 40,
-              label: level.toString(),
-              value: level.toDouble(),
-              onChanged: (double value) {
-                ref.read(Settings.darkBlendLevelProvider.notifier).set(
-                      value.toInt(),
-                    );
-              }),
+            min: 0,
+            max: 40,
+            divisions: 40,
+            label: level.toString(),
+            value: level.toDouble(),
+            onChanged: (double value) {
+              ref
+                  .read(Settings.darkBlendLevelProvider.notifier)
+                  .set(value.toInt());
+            },
+          ),
         ],
       ),
       trailing: Padding(
@@ -31,10 +32,7 @@ class DarkSurfaceBlendLevelSlider extends ConsumerWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.end,
           children: <Widget>[
-            Text(
-              'Level',
-              style: style,
-            ),
+            Text('Level', style: style),
             Text(
               level.toString(),
               style: style.copyWith(fontWeight: FontWeight.bold),

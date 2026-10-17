@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:material_ui/material_ui.dart';
 
 import '../../../l10n/generated/l10n.dart';
 import '../../controllers/settings.dart';
@@ -30,10 +30,7 @@ class AppBarElevationSlider extends ConsumerWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.end,
           children: <Widget>[
-            Text(
-              T.of(context).elevationLabel,
-              style: style,
-            ),
+            Text(T.of(context).elevationLabel, style: style),
             Text(
               elevation.toStringAsFixed(1),
               style: style.copyWith(fontWeight: FontWeight.bold),

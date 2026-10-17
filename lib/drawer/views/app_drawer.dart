@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:material_ui/material_ui.dart';
 
 import '../../about/views/about.dart';
 import '../../bottom_sheet/views/bottom_sheet_settings.dart';
@@ -61,7 +61,9 @@ class AppDrawer extends ConsumerWidget {
               onTap: () async {
                 Navigator.pop(context);
                 await Navigator.pushReplacementNamed(
-                    context, ThemeShowcasePage.route);
+                  context,
+                  ThemeShowcasePage.route,
+                );
               },
             ),
 

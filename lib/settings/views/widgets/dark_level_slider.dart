@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:material_ui/material_ui.dart';
 
 import '../../../core/views/widgets/universal/animated_hide.dart';
 import '../../../l10n/generated/l10n.dart';
@@ -12,7 +12,8 @@ class DarkLevelSlider extends ConsumerWidget {
     final TextStyle style = Theme.of(context).textTheme.bodySmall!;
     final int level = ref.watch(Settings.darkComputeLevelProvider);
     return AnimatedHide(
-      hide: !ref.watch(Settings.darkComputeThemeProvider) ||
+      hide:
+          !ref.watch(Settings.darkComputeThemeProvider) ||
           ref.watch(Settings.usePrimaryKeyColorProvider),
       child: ListTile(
         title: Slider.adaptive(
@@ -31,10 +32,7 @@ class DarkLevelSlider extends ConsumerWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.end,
             children: <Widget>[
-              Text(
-                T.of(context).levelLabel,
-                style: style,
-              ),
+              Text(T.of(context).levelLabel, style: style),
               Text(
                 '$level %',
                 style: style.copyWith(fontWeight: FontWeight.bold),

@@ -1,6 +1,6 @@
 import 'package:flex_color_scheme/flex_color_scheme.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:material_ui/material_ui.dart';
 
 import '../../controllers/settings.dart';
 import 'surface_mode_widgets.dart';
@@ -17,12 +17,13 @@ class LightSurfaceModePopupMenu extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return SurfaceModePopupMenu(
-        title: const Text('Light theme surface mode'),
-        index: ref.watch(Settings.lightSurfaceModeProvider).index,
-        onChanged: (int index) {
-          ref
-              .read(Settings.lightSurfaceModeProvider.notifier)
-              .set(FlexSurfaceMode.values[index]);
-        });
+      title: const Text('Light theme surface mode'),
+      index: ref.watch(Settings.lightSurfaceModeProvider).index,
+      onChanged: (int index) {
+        ref
+            .read(Settings.lightSurfaceModeProvider.notifier)
+            .set(FlexSurfaceMode.values[index]);
+      },
+    );
   }
 }

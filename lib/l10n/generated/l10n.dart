@@ -70,7 +70,7 @@ import 'l10n_uk.dart';
 /// property.
 abstract class T {
   T(String locale)
-      : localeName = intl.Intl.canonicalizedLocale(locale.toString());
+    : localeName = intl.Intl.canonicalizedLocale(locale.toString());
 
   final String localeName;
 
@@ -92,11 +92,11 @@ abstract class T {
   /// of delegates is preferred or required.
   static const List<LocalizationsDelegate<dynamic>> localizationsDelegates =
       <LocalizationsDelegate<dynamic>>[
-    delegate,
-    GlobalMaterialLocalizations.delegate,
-    GlobalCupertinoLocalizations.delegate,
-    GlobalWidgetsLocalizations.delegate,
-  ];
+        delegate,
+        GlobalMaterialLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+      ];
 
   /// A list of this localizations delegate's supported locales.
   static const List<Locale> supportedLocales = <Locale>[
@@ -108,7 +108,7 @@ abstract class T {
     Locale('pl'),
     Locale('ru'),
     Locale('sk'),
-    Locale('uk')
+    Locale('uk'),
   ];
 
   /// current language
@@ -320,16 +320,16 @@ class _TDelegate extends LocalizationsDelegate<T> {
 
   @override
   bool isSupported(Locale locale) => <String>[
-        'ar',
-        'bg',
-        'cs',
-        'en',
-        'nl',
-        'pl',
-        'ru',
-        'sk',
-        'uk'
-      ].contains(locale.languageCode);
+    'ar',
+    'bg',
+    'cs',
+    'en',
+    'nl',
+    'pl',
+    'ru',
+    'sk',
+    'uk',
+  ].contains(locale.languageCode);
 
   @override
   bool shouldReload(_TDelegate old) => false;
@@ -359,8 +359,9 @@ T lookupT(Locale locale) {
   }
 
   throw FlutterError(
-      'T.delegate failed to load unsupported locale "$locale". This is likely '
-      'an issue with the localizations generation tool. Please file an issue '
-      'on GitHub with a reproducible sample app and the gen-l10n configuration '
-      'that was used.');
+    'T.delegate failed to load unsupported locale "$locale". This is likely '
+    'an issue with the localizations generation tool. Please file an issue '
+    'on GitHub with a reproducible sample app and the gen-l10n configuration '
+    'that was used.',
+  );
 }

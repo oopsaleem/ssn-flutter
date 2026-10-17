@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 // ignore_for_file: comment_references
 
@@ -125,12 +125,16 @@ class SwitchListTileAdaptive extends StatelessWidget {
     // if (theme.platform == TargetPlatform.iOS ||
     //     theme.platform == TargetPlatform.macOS) {
     if (theme.useMaterial3) {
-      color = theme.switchTheme.thumbColor
-              ?.resolve(<MaterialState>{MaterialState.selected}) ??
+      color =
+          theme.switchTheme.thumbColor?.resolve(<WidgetState>{
+            WidgetState.selected,
+          }) ??
           theme.colorScheme.primary;
     } else {
-      color = theme.switchTheme.thumbColor
-              ?.resolve(<MaterialState>{MaterialState.selected}) ??
+      color =
+          theme.switchTheme.thumbColor?.resolve(<WidgetState>{
+            WidgetState.selected,
+          }) ??
           theme.colorScheme.secondary;
     }
     // }
@@ -140,7 +144,7 @@ class SwitchListTileAdaptive extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SwitchListTile.adaptive(
-      activeColor: activeColor ?? activeThumbColor(context),
+      activeThumbColor: activeColor ?? activeThumbColor(context),
       value: value,
       onChanged: onChanged,
       title: title,

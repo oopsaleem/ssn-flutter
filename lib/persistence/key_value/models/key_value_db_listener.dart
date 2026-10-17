@@ -1,5 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_riverpod/legacy.dart';
 
 import '../../../settings/controllers/settings.dart';
 import 'key_value_db.dart';
@@ -29,9 +30,10 @@ class KeyValueDbListener {
   void _init() {
     if (_debug) debugPrint('KeyValueDbListener: _init() setup listen');
     // Listen to state changes in keyValueDbProvider.state.
-    ref.listen<StateController<KeyValueDb>>(keyValueDbProvider.notifier,
-        (StateController<KeyValueDb>? previous,
-            StateController<KeyValueDb> current) async {
+    ref.listen<StateController<KeyValueDb>>(keyValueDbProvider.notifier, (
+      StateController<KeyValueDb>? previous,
+      StateController<KeyValueDb> current,
+    ) async {
       // This callback executes when the keyValueDbProvider value changes.
       if (_debug) {
         debugPrint('KeyValueDbListener: listen called - - - - -');
@@ -48,7 +50,7 @@ class KeyValueDbListener {
 
 /// A provider used to read and activate a [KeyValueDbListener].
 final Provider<KeyValueDbListener> keyValueDbListenerProvider =
-    Provider<KeyValueDbListener>((ProviderRef<KeyValueDbListener> ref) {
-  if (_debug) debugPrint('keyValueDbListenerProvider called');
-  return KeyValueDbListener(ref);
-});
+    Provider<KeyValueDbListener>((Ref ref) {
+      if (_debug) debugPrint('keyValueDbListenerProvider called');
+      return KeyValueDbListener(ref);
+    });
