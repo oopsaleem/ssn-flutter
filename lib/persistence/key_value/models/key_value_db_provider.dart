@@ -1,5 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_riverpod/legacy.dart';
 
 import '../controllers/used_key_value_db_provider.dart';
 import 'key_value_db.dart';
@@ -14,8 +15,9 @@ const bool _debug = !kReleaseMode && true;
 /// Provides a [KeyValueDb] DB repository.
 ///
 /// The value returned depends on the controller [usedKeyValueDbProvider].
-final StateProvider<KeyValueDb> keyValueDbProvider =
-    StateProvider<KeyValueDb>((StateProviderRef<KeyValueDb> ref) {
+final StateProvider<KeyValueDb> keyValueDbProvider = StateProvider<KeyValueDb>((
+  Ref ref,
+) {
   ref.onDispose(() {
     if (_debug) debugPrint('keyValueDbProvider: onDispose called');
   });

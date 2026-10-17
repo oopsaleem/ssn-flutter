@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:material_ui/material_ui.dart';
 
 import '../../controllers/settings.dart';
 
@@ -11,9 +11,7 @@ import '../../controllers/settings.dart';
 // need, where first button turns off all, but 2nd and 3rd button can be toggled
 // individually.
 class UseKeyColorsToggleButtons extends ConsumerWidget {
-  const UseKeyColorsToggleButtons({
-    super.key,
-  });
+  const UseKeyColorsToggleButtons({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -46,7 +44,8 @@ class UseKeyColorsToggleButtons extends ConsumerWidget {
       },
       children: <Widget>[
         const Tooltip(
-          message: 'Use light theme Primary color\n'
+          message:
+              'Use light theme Primary color\n'
               'as key color to seed your ColorScheme',
           child: Padding(
             padding: EdgeInsets.symmetric(horizontal: 8.0),
@@ -59,7 +58,8 @@ class UseKeyColorsToggleButtons extends ConsumerWidget {
           maintainState: true,
           maintainAnimation: true,
           child: const Tooltip(
-            message: 'Use light theme Secondary color\n'
+            message:
+                'Use light theme Secondary color\n'
                 'as key color to seed your ColorScheme',
             child: Padding(
               padding: EdgeInsets.symmetric(horizontal: 8.0),
@@ -73,7 +73,8 @@ class UseKeyColorsToggleButtons extends ConsumerWidget {
           maintainState: true,
           maintainAnimation: true,
           child: const Tooltip(
-            message: 'Use light theme Tertiary color\n'
+            message:
+                'Use light theme Tertiary color\n'
                 'as key color to seed your ColorScheme',
             child: Padding(
               padding: EdgeInsets.symmetric(horizontal: 8.0),
@@ -88,9 +89,7 @@ class UseKeyColorsToggleButtons extends ConsumerWidget {
 
 /// A list tile to explain the currently used M3 seeded ColorScheme mode.
 class ListTileExplainUsedSeed extends ConsumerWidget {
-  const ListTileExplainUsedSeed({
-    super.key,
-  });
+  const ListTileExplainUsedSeed({super.key});
 
   /// Explain the current selection of key colors used to
   /// generate the ColorScheme, when it is activated.

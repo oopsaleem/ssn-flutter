@@ -1,6 +1,6 @@
-import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:material_ui/material_ui.dart';
 
 import 'app/views/ssn_app.dart';
 import 'core/utils/app_provider_observer.dart';
@@ -33,9 +33,6 @@ Future<void> main() async {
   container.read(keyValueDbListenerProvider);
 
   runApp(
-    UncontrolledProviderScope(
-      container: container,
-      child: const SsnApp(),
-    ),
+    UncontrolledProviderScope(container: container, child: const SsnApp()),
   );
 }

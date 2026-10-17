@@ -1,6 +1,6 @@
 import 'package:dropdown_search/dropdown_search.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:material_ui/material_ui.dart';
 
 import '../../../core/constants/app_const.dart';
 import '../../../l10n/generated/l10n.dart';
@@ -18,13 +18,14 @@ class LanguagePickerWidget extends ConsumerWidget {
         children: [
           DropdownSearch<LanguageModel>(
             selectedItem: L10n.supportedLanguages.firstWhere(
-                (i) => i.isOfCode(ref.watch(Settings.localeProvider)!)),
-            asyncItems: (text) async => getData(text, context),
-            onChanged: (value) =>
+              (i) => i.isOfCode(ref.watch(Settings.localeProvider)!),
+            ),
+            items: (text, _) async => getData(text, context),
+            onSelected: (value) =>
                 ref.read(Settings.localeProvider.notifier).set(value?.code),
             compareFn: (i, s) => i.isEqual(s),
-            popupProps: const PopupPropsMultiSelection.dialog(
-              isFilterOnline: true,
+            popupProps: const PopupProps.dialog(
+              disableFilter: true,
               showSelectedItems: true,
               showSearchBox: true,
               itemBuilder: _customPopupItemBuilderLanguages,
@@ -39,26 +40,28 @@ class LanguagePickerWidget extends ConsumerWidget {
     if (filter.isEmpty) return L10n.supportedLanguages;
 
     final String lowerCaseFilter = filter.toLowerCase();
-    return L10n.supportedLanguages.where(
-      (i) {
-        return i.locName.toLowerCase().contains(lowerCaseFilter) ||
-            i.enName.toLowerCase().contains(lowerCaseFilter) ||
-            i.code.toLowerCase().contains(lowerCaseFilter) ||
-            T
-                .of(context)
-                .localeLanguageWritten(i.enName)
-                .toLowerCase()
-                .contains(lowerCaseFilter);
-      },
-    ).toList();
+    return L10n.supportedLanguages.where((i) {
+      return i.locName.toLowerCase().contains(lowerCaseFilter) ||
+          i.enName.toLowerCase().contains(lowerCaseFilter) ||
+          i.code.toLowerCase().contains(lowerCaseFilter) ||
+          T
+              .of(context)
+              .localeLanguageWritten(i.enName)
+              .toLowerCase()
+              .contains(lowerCaseFilter);
+    }).toList();
   }
 }
 
 Widget _customPopupItemBuilderLanguages(
-    BuildContext context, LanguageModel model, bool isSelected) {
-  return Container(
+  BuildContext context,
+  LanguageModel model,
+  bool isDisabled,
+  bool isSelected,
+) {
+  return DecoratedBox(
     decoration: !isSelected
-        ? null
+        ? const BoxDecoration()
         : BoxDecoration(
             border: Border.all(color: Theme.of(context).primaryColor),
             // borderRadius: BorderRadius.circular(5),

@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:flex_color_picker/flex_color_picker.dart';
 import 'package:flex_color_scheme/flex_color_scheme.dart';
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 import '../../../constants/app_insets.dart';
 import 'copy_color_to_clipboard.dart';
@@ -37,7 +37,8 @@ class ColorCard extends StatelessWidget {
     final String nameThatColor = ColorTools.nameThatColor(color);
     final String space = materialName == '' ? '' : ' ';
     final MediaQueryData media = MediaQuery.of(context);
-    final bool isPhone = media.size.width < AppInsets.phoneWidthBreakpoint ||
+    final bool isPhone =
+        media.size.width < AppInsets.phoneWidthBreakpoint ||
         media.size.height < AppInsets.phoneHeightBreakpoint;
     final double fontSize = isPhone ? 10 : 11;
     final Size effectiveSize =
@@ -48,7 +49,8 @@ class ColorCard extends StatelessWidget {
       height: effectiveSize.height,
       child: Tooltip(
         waitDuration: const Duration(milliseconds: 700),
-        message: 'Color #${color.hexCode} $nameThatColor$space$materialName.'
+        message:
+            'Color #${color.hexCode} $nameThatColor$space$materialName.'
             '\nTap box to copy RGB value to Clipboard.',
         child: Card(
           margin: EdgeInsets.zero,

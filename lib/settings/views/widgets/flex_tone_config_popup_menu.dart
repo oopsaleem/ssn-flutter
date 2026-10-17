@@ -1,5 +1,5 @@
 import 'package:flex_color_scheme/flex_color_scheme.dart';
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 import '../../../core/views/widgets/app/color_scheme_box.dart';
 import '../../../theme/models/flex_tone.dart';
@@ -32,8 +32,9 @@ class FlexToneConfigPopupMenu extends StatelessWidget {
       tooltip: '',
       padding: EdgeInsets.zero,
       onSelected: (int index) {
-        onChanged
-            ?.call(index >= FlexTone.values.length || index < 1 ? 0 : index);
+        onChanged?.call(
+          index >= FlexTone.values.length || index < 1 ? 0 : index,
+        );
       },
       enabled: !disabled,
       itemBuilder: (BuildContext context) => <PopupMenuItem<int>>[
@@ -51,7 +52,7 @@ class FlexToneConfigPopupMenu extends StatelessWidget {
               ),
               title: Text(FlexTone.values[i].tone, style: txtStyle),
             ),
-          )
+          ),
       ],
       child: ListTile(
         enabled: !disabled,
@@ -60,8 +61,9 @@ class FlexToneConfigPopupMenu extends StatelessWidget {
         title: Text('$title ${FlexTone.values[index].tone}'),
         subtitle: Text(FlexTone.values[index].describe),
         trailing: ColorSchemeBox(
-          backgroundColor:
-              !disabled ? colorScheme.primary : colorScheme.primaryContainer,
+          backgroundColor: !disabled
+              ? colorScheme.primary
+              : colorScheme.primaryContainer,
           defaultOption: disabled,
           optionIcon: FlexTone.values[index].icon,
         ),

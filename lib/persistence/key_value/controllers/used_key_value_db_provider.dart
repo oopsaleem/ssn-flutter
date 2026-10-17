@@ -1,4 +1,5 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_riverpod/legacy.dart';
 
 import '../../../core/constants/app_db.dart';
 import '../models/key_value_db.dart';
@@ -10,6 +11,6 @@ import '../models/used_key_value_db.dart';
 /// Used by UI widgets to select used [KeyValueDb] implementation.
 final StateProvider<UsedKeyValueDb> usedKeyValueDbProvider =
     StateProvider<UsedKeyValueDb>(
-  (final StateProviderRef<UsedKeyValueDb> ref) => AppDb.keyValue,
-  name: 'usedKeyValueDbProvider',
-);
+      (Ref ref) => AppDb.keyValue,
+      name: 'usedKeyValueDbProvider',
+    );

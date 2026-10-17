@@ -1,6 +1,6 @@
 import 'package:flex_color_scheme/flex_color_scheme.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:material_ui/material_ui.dart';
 
 import '../../core/constants/app_const.dart';
 import '../../core/constants/app_icons.dart';
@@ -29,8 +29,9 @@ void showAppAboutDialog(BuildContext context) {
   final ThemeData themeData = Theme.of(context);
   final TextStyle aboutTextStyle = themeData.textTheme.bodyLarge!;
   final TextStyle footerStyle = themeData.textTheme.bodySmall!;
-  final TextStyle linkStyle =
-      themeData.textTheme.bodyLarge!.copyWith(color: themeData.primaryColor);
+  final TextStyle linkStyle = themeData.textTheme.bodyLarge!.copyWith(
+    color: themeData.primaryColor,
+  );
 
   showAboutDialog(
     context: context,
@@ -47,7 +48,8 @@ void showAppAboutDialog(BuildContext context) {
             children: <TextSpan>[
               TextSpan(
                 style: aboutTextStyle,
-                text: 'This app demos FlexColorScheme theming, '
+                text:
+                    'This app demos FlexColorScheme theming, '
                     'together with Riverpod and three different '
                     'settings persistence implementations, volatile memory, '
                     'SharedPreferences and Hive.\n\n'
@@ -58,13 +60,11 @@ void showAppAboutDialog(BuildContext context) {
                 uri: AppConst.packageUri,
                 text: 'pub.dev',
               ),
-              TextSpan(
-                style: aboutTextStyle,
-                text: '.\n\n',
-              ),
+              TextSpan(style: aboutTextStyle, text: '.\n\n'),
               TextSpan(
                 style: footerStyle,
-                text: 'Built with Flutter ${AppConst.flutterVersion}, using '
+                text:
+                    'Built with Flutter ${AppConst.flutterVersion}, using '
                     'FlexColorScheme package ${AppConst.packageVersion}\n\n',
               ),
             ],
@@ -89,14 +89,14 @@ class _AboutAppIcon extends ConsumerWidget {
     // sub theme defined global border radius, if it is defined.
     final double optionButtonBorderRadius =
         ref.watch(Settings.useSubThemesProvider)
-            // M3 default for Card is 12.
-            ? ref.watch(Settings.defaultRadiusProvider) ??
-                // M3 or M2 default for Card, if global radius not defined.
-                (useMaterial3 ? 12 : 4)
-            // Use M3 or M2 default for Card, if not using sub-themes.
-            : useMaterial3
-                ? 12
-                : 4;
+        // M3 default for Card is 12.
+        ? ref.watch(Settings.defaultRadiusProvider) ??
+              // M3 or M2 default for Card, if global radius not defined.
+              (useMaterial3 ? 12 : 4)
+        // Use M3 or M2 default for Card, if not using sub-themes.
+        : useMaterial3
+        ? 12
+        : 4;
 
     return FlexThemeModeOptionButton(
       flexSchemeColor: FlexSchemeColor(
@@ -109,7 +109,7 @@ class _AboutAppIcon extends ConsumerWidget {
       ),
       selected: false,
       unselectedBorder: BorderSide.none,
-      backgroundColor: scheme.background,
+      backgroundColor: scheme.surface,
       width: AppInsets.xl,
       height: AppInsets.xl,
       padding: EdgeInsets.zero,

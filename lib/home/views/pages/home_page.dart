@@ -1,7 +1,7 @@
 import 'package:flex_color_scheme/flex_color_scheme.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:material_ui/material_ui.dart';
 
 import '../../../core/constants/app_const.dart';
 import '../../../core/constants/app_insets.dart';
@@ -56,9 +56,7 @@ class _MyHomePageState extends ConsumerState<HomePage> {
     return Scaffold(
       extendBodyBehindAppBar: true,
       extendBody: true,
-      appBar: AppBar(
-        title: const Text(AppConst.appName),
-      ),
+      appBar: AppBar(title: const Text(AppConst.appName)),
       drawer: const AppDrawer(),
       // This annotated region will change the Android system navigation bar to
       // a theme color, matching active theme mode and FlexColorScheme theme.
@@ -74,9 +72,7 @@ class _MyHomePageState extends ConsumerState<HomePage> {
               sideMargin,
               bottomPadding,
             ),
-            children: [
-              Text(T.of(context).greeting('username')),
-            ],
+            children: [Text(T.of(context).greeting('username'))],
           ),
         ),
       ),

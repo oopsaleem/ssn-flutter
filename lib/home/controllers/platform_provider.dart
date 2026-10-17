@@ -1,5 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_riverpod/legacy.dart';
 
 // StateProvider used as controller for the selected platform.
 //
@@ -8,6 +9,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 // platforms during development.
 final StateProvider<TargetPlatform> platformProvider =
     StateProvider<TargetPlatform>(
-  (final StateProviderRef<TargetPlatform> ref) => defaultTargetPlatform,
-  name: 'platformProvider',
-);
+      (Ref ref) => defaultTargetPlatform,
+      name: 'platformProvider',
+    );

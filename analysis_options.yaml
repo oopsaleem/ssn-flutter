@@ -32,6 +32,13 @@ analyzer:
     - "bin/cache/**"
     - "lib/l10n/**"
     - "lib/generated_plugin_registrant.dart"
+    - build/**
+    - android/**
+    - ios/**
+    - web/**
+    - windows/**
+    - macos/**
+    - linux/**
 
   # For more information see:
   # https://dart.dev/guides/language/analysis-options#enabling-additional-type-checks
@@ -713,7 +720,7 @@ linter:
     # Lint           disabled : https://pub.dev/packages/lint
     # VG Analysis    disabled : https://pub.dev/packages/very_good_analysis
     # RydMike        disabled : https://gist.github.com/rydmike/fdb53ddd933c37d20e6f3188a936cd4c
-    prefer_final_parameters: false
+#    prefer_final_parameters: false
 
     # DO use int literals rather than the corresponding double literal.
     #

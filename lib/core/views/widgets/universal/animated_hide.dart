@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 /// This widget is good for using a boolean condition to show/hide the [child]
 /// widget. It is a simple convenience wrapper for AnimatedSwitcher
@@ -27,10 +27,7 @@ class AnimatedHide extends StatelessWidget {
     return AnimatedSwitcher(
       duration: const Duration(milliseconds: 300),
       transitionBuilder: (Widget child, Animation<double> animation) {
-        return SizeTransition(
-          sizeFactor: animation,
-          child: child,
-        );
+        return SizeTransition(sizeFactor: animation, child: child);
       },
       child: hide ? const SizedBox.shrink() : child,
     );

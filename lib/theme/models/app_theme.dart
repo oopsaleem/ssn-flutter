@@ -1,5 +1,5 @@
 import 'package:flex_color_scheme/flex_color_scheme.dart';
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 import '../../core/constants/app_fonts.dart';
 import 'flex_tone.dart';
@@ -58,7 +58,8 @@ class AppTheme {
           ? FlexSubThemesData(
               defaultRadius: defaultRadius,
               thinBorderWidth: 1,
-              thickBorderWidth: 2)
+              thickBorderWidth: 2,
+            )
           : null,
       //
       visualDensity: FlexColorScheme.comfortablePlatformDensity,
@@ -122,10 +123,10 @@ class AppTheme {
           // blend to de-saturate the light theme colors an adjustable amount.
           // In this demo we have dark theme color definitions for all themes,
           // this is only included to demonstrate the feature.
-          ? schemes[usedTheme]
-              .light
-              .defaultError
-              .toDark(darkLevel, useMaterial3)
+          ? schemes[usedTheme].light.defaultError.toDark(
+              darkLevel,
+              useMaterial3,
+            )
           : schemes[usedTheme].dark,
       swapColors: swapColors,
       surfaceMode: surfaceMode,

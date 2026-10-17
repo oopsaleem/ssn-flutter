@@ -1,5 +1,3 @@
-import 'dart:async';
-
 import 'package:flutter/foundation.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -12,20 +10,22 @@ const bool _debug = !kReleaseMode && true;
 
 /// AppProviderObserver represents a provider observer for changes in any
 /// providers. If not in release mode, it debugPrints the changes.
-class AppProviderObserver extends ProviderObserver {
+base class AppProviderObserver extends ProviderObserver {
   AppProviderObserver();
 
   @override
-  Future<void> didUpdateProvider(
-      ProviderBase<dynamic> provider,
-      Object? previousValue,
-      Object? newValue,
-      ProviderContainer container) async {
+  void didUpdateProvider(
+    ProviderObserverContext context,
+    Object? previousValue,
+    Object? newValue,
+  ) {
     if (_debug) {
-      debugPrint('PROVIDER    : ${provider.name ?? '<NO NAME>'}\n'
-          '  Type      : ${provider.runtimeType}\n'
-          '  Old value : $previousValue\n'
-          '  New value : $newValue');
+      debugPrint(
+        'PROVIDER    : ${context.provider.name ?? '<NO NAME>'}\n'
+        '  Type      : ${context.provider.runtimeType}\n'
+        '  Old value : $previousValue\n'
+        '  New value : $newValue',
+      );
     }
   }
 }

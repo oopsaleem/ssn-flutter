@@ -1,6 +1,6 @@
 import 'package:flex_color_scheme/flex_color_scheme.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:material_ui/material_ui.dart';
 
 import '../../../../theme/models/app_theme.dart';
 import '../../../l10n/generated/l10n.dart';
@@ -9,10 +9,7 @@ import '../../controllers/settings.dart';
 // This is a theme selector using a ListTile with a Popup-up menu theme
 // selection widget.
 class ThemePopupMenu extends ConsumerWidget {
-  const ThemePopupMenu({
-    super.key,
-    this.contentPadding,
-  });
+  const ThemePopupMenu({super.key, this.contentPadding});
 
   /// The ListTiles tile's internal padding.
   ///
@@ -35,14 +32,14 @@ class ThemePopupMenu extends ConsumerWidget {
     // sub theme defined global border radius, if it is defined.
     final double optionButtonBorderRadius =
         ref.watch(Settings.useSubThemesProvider)
-            // M3 default for Card is 12.
-            ? ref.watch(Settings.defaultRadiusProvider) ??
-                // M3 or M2 default for Card, if global radius not defined.
-                (useMaterial3 ? 12 : 4)
-            // Use M3 or M2 default for Card, if not using sub-themes.
-            : useMaterial3
-                ? 12
-                : 4;
+        // M3 default for Card is 12.
+        ? ref.watch(Settings.defaultRadiusProvider) ??
+              // M3 or M2 default for Card, if global radius not defined.
+              (useMaterial3 ? 12 : 4)
+        // Use M3 or M2 default for Card, if not using sub-themes.
+        : useMaterial3
+        ? 12
+        : 4;
 
     return PopupMenuButton<int>(
       padding: EdgeInsets.zero,
@@ -55,9 +52,13 @@ class ThemePopupMenu extends ConsumerWidget {
               child: ListTile(
                 contentPadding: EdgeInsets.zero,
                 title: Text(
-                  T.of(context).colorSchemeName(
-                        AppTheme.schemes[i].name
-                            .replaceAll(RegExp('[^A-Za-z0-9]'), ''),
+                  T
+                      .of(context)
+                      .colorSchemeName(
+                        AppTheme.schemes[i].name.replaceAll(
+                          RegExp('[^A-Za-z0-9]'),
+                          '',
+                        ),
                       ),
                 ),
                 leading: SizedBox(
@@ -72,7 +73,7 @@ class ThemePopupMenu extends ConsumerWidget {
                       width: 4,
                     ),
                     unselectedBorder: BorderSide.none,
-                    backgroundColor: scheme.background,
+                    backgroundColor: scheme.surface,
                     width: width,
                     height: height,
                     padding: EdgeInsets.zero,
@@ -83,21 +84,29 @@ class ThemePopupMenu extends ConsumerWidget {
                   ),
                 ),
               ),
-            )
+            ),
         ];
       },
       child: ListTile(
         contentPadding: contentPadding,
         title: Text(
-          T.of(context).colorSchemeName(
-                AppTheme.schemes[selected].name
-                    .replaceAll(RegExp('[^A-Za-z0-9]'), ''),
+          T
+              .of(context)
+              .colorSchemeName(
+                AppTheme.schemes[selected].name.replaceAll(
+                  RegExp('[^A-Za-z0-9]'),
+                  '',
+                ),
               ),
         ),
         subtitle: Text(
-          T.of(context).colorSchemeDesc(
-                AppTheme.schemes[selected].name
-                    .replaceAll(RegExp('[^A-Za-z0-9]'), ''),
+          T
+              .of(context)
+              .colorSchemeDesc(
+                AppTheme.schemes[selected].name.replaceAll(
+                  RegExp('[^A-Za-z0-9]'),
+                  '',
+                ),
               ),
         ),
         trailing: SizedBox(
@@ -113,7 +122,7 @@ class ThemePopupMenu extends ConsumerWidget {
             ),
             selected: false,
             unselectedBorder: BorderSide.none,
-            backgroundColor: scheme.background,
+            backgroundColor: scheme.surface,
             width: width,
             height: height,
             padding: EdgeInsets.zero,

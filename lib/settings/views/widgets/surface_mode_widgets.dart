@@ -1,5 +1,5 @@
 import 'package:flex_color_scheme/flex_color_scheme.dart';
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 import '../../../core/constants/app_insets.dart';
 import '../../../core/views/widgets/app/color_scheme_box.dart';
@@ -144,10 +144,12 @@ class SurfaceModePopupMenu extends StatelessWidget {
     final String styleName = explainMode(FlexSurfaceMode.values[index]);
     final List<Widget> modeWidgets = _getModeWidget(scheme);
 
-    final IconThemeData selectedIconTheme =
-        theme.iconTheme.copyWith(color: scheme.onPrimary.withAlpha(0xE5));
-    final IconThemeData unSelectedIconTheme =
-        theme.iconTheme.copyWith(color: scheme.primary);
+    final IconThemeData selectedIconTheme = theme.iconTheme.copyWith(
+      color: scheme.onPrimary.withAlpha(0xE5),
+    );
+    final IconThemeData unSelectedIconTheme = theme.iconTheme.copyWith(
+      color: scheme.primary,
+    );
 
     return PopupMenuButton<int>(
       tooltip: '',
@@ -189,7 +191,7 @@ class SurfaceModePopupMenu extends StatelessWidget {
                   style: txtStyle,
                 ),
               ),
-            )
+            ),
         ];
       },
       child: ListTile(
@@ -199,10 +201,7 @@ class SurfaceModePopupMenu extends StatelessWidget {
         title: title,
         subtitle: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            if (subtitle != null) subtitle!,
-            Text(styleName),
-          ],
+          children: <Widget>[if (subtitle != null) subtitle!, Text(styleName)],
         ),
         trailing: IconTheme(
           data: selectedIconTheme,
@@ -235,11 +234,11 @@ List<Widget> _getModeWidget(ColorScheme scheme, [bool allModes = true]) =>
         message: 'High surface\nlow scaffold',
         child: Icon(Icons.layers),
       ),
-      Tooltip(
+      const Tooltip(
         message: 'High scaffold\nlow surface',
         child: Stack(
           alignment: Alignment.center,
-          children: const <Widget>[
+          children: <Widget>[
             Padding(
               padding: EdgeInsets.only(top: 10),
               child: Icon(Icons.layers_outlined),
@@ -268,7 +267,9 @@ List<Widget> _getModeWidget(ColorScheme scheme, [bool allModes = true]) =>
             alignment: Alignment.center,
             children: <Widget>[
               const RotatedBox(
-                  quarterTurns: 2, child: Icon(Icons.horizontal_split)),
+                quarterTurns: 2,
+                child: Icon(Icons.horizontal_split),
+              ),
               Icon(Icons.stop, color: scheme.tertiary, size: 18),
             ],
           ),

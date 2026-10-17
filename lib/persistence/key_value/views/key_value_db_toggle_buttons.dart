@@ -1,8 +1,9 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:material_ui/material_ui.dart';
 
 import '../controllers/used_key_value_db_provider.dart';
 import '../models/used_key_value_db.dart';
+
 // ignore_for_file: comment_references
 
 /// UI used to toggle the used [KeyValueDb] implementation of the application.

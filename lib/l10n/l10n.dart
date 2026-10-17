@@ -1,6 +1,5 @@
 import '../core/constants/app_const.dart';
 
-
 class L10n {
   static final List<LanguageModel> supportedLanguages = [
     LanguageModel('ar', 'arabic', 'العربية', '🇸🇦'),

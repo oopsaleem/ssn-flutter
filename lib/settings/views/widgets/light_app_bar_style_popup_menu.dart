@@ -1,6 +1,6 @@
 import 'package:flex_color_scheme/flex_color_scheme.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:material_ui/material_ui.dart';
 
 import '../../../theme/models/app_theme.dart';
 import '../../controllers/settings.dart';
@@ -16,8 +16,11 @@ class LightAppBarStylePopupMenu extends ConsumerWidget {
   final String title;
   final String defaultLabel;
 
-  const LightAppBarStylePopupMenu(
-      {super.key, required this.title, required this.defaultLabel});
+  const LightAppBarStylePopupMenu({
+    super.key,
+    required this.title,
+    required this.defaultLabel,
+  });
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -46,7 +49,9 @@ class LightAppBarStylePopupMenu extends ConsumerWidget {
       // colors in the three custom color examples, and we want to
       // show them as well on the PopupMenu button.
       customAppBarColor: AppTheme
-          .schemes[ref.watch(Settings.schemeIndexProvider)].light.appBarColor,
+          .schemes[ref.watch(Settings.schemeIndexProvider)]
+          .light
+          .appBarColor,
       customScaffoldColor: Theme.of(context).scaffoldBackgroundColor,
     );
   }

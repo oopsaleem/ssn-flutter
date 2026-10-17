@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:material_ui/material_ui.dart';
 
 import '../../core/constants/app_insets.dart';
 import '../../core/views/widgets/universal/animated_hide.dart';
@@ -73,8 +73,8 @@ class BottomSheetSettings extends ConsumerWidget {
                 // Hide the extra dark mode controls in light theme mode.
                 AnimatedHide(
                   hide: isLight,
-                  child: Column(
-                    children: const <Widget>[
+                  child: const Column(
+                    children: <Widget>[
                       DarkIsTrueBlackSwitch(),
                       DarkComputeThemeSwitch(),
                       DarkLevelSlider(),
@@ -86,14 +86,16 @@ class BottomSheetSettings extends ConsumerWidget {
                 if (isLight)
                   LightAppBarStylePopupMenu(
                     title: T.of(context).appBarStylePopupMenuTitle,
-                    defaultLabel:
-                        T.of(context).appBarStylePopupMenuDefaultLabel,
+                    defaultLabel: T
+                        .of(context)
+                        .appBarStylePopupMenuDefaultLabel,
                   )
                 else
                   DarkAppBarStylePopupMenu(
                     title: T.of(context).appBarStylePopupMenuTitle,
-                    defaultLabel:
-                        T.of(context).appBarStylePopupMenuDefaultLabel,
+                    defaultLabel: T
+                        .of(context)
+                        .appBarStylePopupMenuDefaultLabel,
                   ),
                 const AppBarElevationSlider(),
                 ListTile(
@@ -111,7 +113,6 @@ class BottomSheetSettings extends ConsumerWidget {
                     }
                   },
                 ),
-
               ],
             ),
           ),

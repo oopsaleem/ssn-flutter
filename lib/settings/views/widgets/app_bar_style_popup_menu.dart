@@ -1,5 +1,5 @@
 import 'package:flex_color_scheme/flex_color_scheme.dart';
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 import '../../../core/utils/string_case_extensions.dart';
 import '../../../core/views/widgets/app/color_scheme_box.dart';
@@ -58,9 +58,9 @@ class AppBarStylePopupMenu extends StatelessWidget {
       case FlexAppBarStyle.surface:
         return colorScheme.surface;
       case FlexAppBarStyle.background:
-        return colorScheme.background;
+        return colorScheme.surface;
       case FlexAppBarStyle.scaffoldBackground:
-        return customScaffoldColor ?? colorScheme.background;
+        return customScaffoldColor ?? colorScheme.surface;
       case FlexAppBarStyle.custom:
         return customAppBarColor ?? colorScheme.tertiaryContainer;
       case null:
@@ -154,11 +154,13 @@ class AppBarStylePopupMenu extends StatelessWidget {
                         isLight,
                         useM3,
                       ),
-                borderColor: index == i ||
+                borderColor:
+                    index == i ||
                         (i >= FlexAppBarStyle.values.length && useDefault)
                     ? scheme.primary
                     : scheme.outline,
-                selected: index == i ||
+                selected:
+                    index == i ||
                     (i >= FlexAppBarStyle.values.length && useDefault),
                 defaultOption: i >= FlexAppBarStyle.values.length,
               ),
@@ -170,7 +172,7 @@ class AppBarStylePopupMenu extends StatelessWidget {
                       style: txtStyle,
                     ),
             ),
-          )
+          ),
       ],
       child: ListTile(
         enabled: enabled,
@@ -179,10 +181,7 @@ class AppBarStylePopupMenu extends StatelessWidget {
         title: title,
         subtitle: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            if (subtitle != null) subtitle!,
-            Text(styleName),
-          ],
+          children: <Widget>[if (subtitle != null) subtitle!, Text(styleName)],
         ),
         trailing: ColorSchemeBox(
           backgroundColor: enabled && !useDefault

@@ -1,6 +1,6 @@
 import 'package:flex_color_scheme/flex_color_scheme.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:material_ui/material_ui.dart';
 
 import '../../../about/views/about.dart';
 import '../../../core/constants/app_insets.dart';
@@ -75,8 +75,9 @@ class _ThemeShowcasePageState extends State<ThemeShowcasePage> {
               ),
               children: <Widget>[
                 Padding(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: AppInsets.edge),
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: AppInsets.edge,
+                  ),
                   child: Text('Theme Showcase', style: medium),
                 ),
                 const Padding(
@@ -108,8 +109,9 @@ class _ThemeShowcasePageState extends State<ThemeShowcasePage> {
                 ),
                 const Divider(),
                 Padding(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: AppInsets.edge),
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: AppInsets.edge,
+                  ),
                   child: Text('Showcase', style: medium),
                 ),
                 const Padding(
